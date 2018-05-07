@@ -1,0 +1,13 @@
+[Unit]
+Description=flicd listener for SmartThings
+
+[Service]
+Environment=NODE_PATH=/usr/lib/node_modules
+Type=simple
+ExecStart=/usr/bin/node /var/lib/fliclib/nodejs/flicListener.js
+Restart=on-failure
+RestartSecs=10
+
+
+[Install]
+WantedBy=multi-user.target

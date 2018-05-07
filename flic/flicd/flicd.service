@@ -1,0 +1,11 @@
+[Unit]
+Description=flicd Service
+
+[Service]
+TimeoutStartSec=0
+ExecStart=/usr/bin/flicd -f /var/lib/flicd/flic.sqlite3 -l /var/log/flicd.log -h hci0 -w
+Restart=always
+RestartSec=3
+
+[Install]
+WantedBy=multi-user.target
